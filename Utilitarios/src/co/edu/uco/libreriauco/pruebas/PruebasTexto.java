@@ -1,19 +1,16 @@
 package co.edu.uco.libreriauco.pruebas;
 
+import static co.edu.uco.libreriauco.transversal.utilitarios.UtilTexto.getUtilTexto;
+
 public class PruebasTexto {
 
 	public static void main(String[] args) {
 		
-		String miVariable = null;
-		System.out.println(miVariable);
+		String miVariable = "  mi casa es azul    ";
 		
-		
-		if(miVariable == null)
-		{
-			miVariable = "";
-		}
 		System.out.println(miVariable);
-		System.out.println(miVariable.length());
+		System.out.println(getUtilTexto().obtenerLongitudCadena(miVariable, false));
+		System.out.println(getUtilTexto().obtenerLongitudCadena(miVariable, true));
 		
 		
 
