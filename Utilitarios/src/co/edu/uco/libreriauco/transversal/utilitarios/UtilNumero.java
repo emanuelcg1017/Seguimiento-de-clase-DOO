@@ -27,15 +27,16 @@ public class UtilNumero {
 		return obtenerValorDefecto(numeroUno).doubleValue() >= obtenerValorDefecto(numeroDos).doubleValue();
 	}
 	
-	public static <N extends Number> boolean menorIgualrQue(N numeroUno, N numeroDos){
-		return obtenerValorDefecto(numeroUno).doubleValue() >= obtenerValorDefecto(numeroDos).doubleValue();
+	public static <N extends Number> boolean menorIgualQue(N numeroUno, N numeroDos){
+		return obtenerValorDefecto(numeroUno).doubleValue() <= obtenerValorDefecto(numeroDos).doubleValue();
 	}
 	
 	public static <N extends Number> boolean diferenteQue(N numeroUno, N numeroDos){
 		return obtenerValorDefecto(numeroUno).doubleValue() != obtenerValorDefecto(numeroDos).doubleValue();
 	}
 	
-	public static <N extends Number> boolean estaEntre(N numeroUno, int longitudInicial, int longitudFinal){
-		return 
+	public static <N extends Number> boolean estaEntre(N numeroUno, int longitudInicial, int longitudFinal, boolean incluirLimites){
+		return incluirLimites ? mayorIgualQue(numeroUno, longitudInicial) && menorIgualQue(numeroUno, longitudFinal) :
+			mayorQue(numeroUno, longitudInicial) && menorQue(numeroUno, longitudFinal);
 	}
 }
