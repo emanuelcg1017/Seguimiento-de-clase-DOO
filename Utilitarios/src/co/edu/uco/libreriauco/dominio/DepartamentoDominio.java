@@ -15,7 +15,7 @@ public class DepartamentoDominio {
 	private PaisDominio pais;
 	
 
-	private DepartamentoDominio(Builder builder) {
+	DepartamentoDominio(Builder builder) {
 		this.id = builder.id;
 		this.nombre = builder.nombre;
 		this.pais = builder.pais;

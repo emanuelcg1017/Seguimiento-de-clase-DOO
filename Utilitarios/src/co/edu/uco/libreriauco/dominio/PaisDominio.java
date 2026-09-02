@@ -10,12 +10,8 @@ public class PaisDominio {
 	private UUID id;
 	private String nombre;
 
-	private PaisDominio(UUID id, String nombre) {
-		this.id = id;
-		this.nombre = nombre;
-	}
 
-	private PaisDominio(Builder builder) {
+	PaisDominio(Builder builder) {
 		this.id = builder.id;
 		this.nombre = builder.nombre;
 	}

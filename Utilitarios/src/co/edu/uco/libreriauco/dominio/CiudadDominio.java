@@ -28,7 +28,7 @@ public class CiudadDominio {
 		return nombre;
 	}
 
-	public PaisDominio getDepartamento() {
+	public DepartamentoDominio getDepartamento() {
 		return departamento;
 	}
 	
@@ -58,7 +58,7 @@ public class CiudadDominio {
 			return this;
 		}
 		
-		public DepartamentoDominio build() {
+		public CiudadDominio build() {
 			return new CiudadDominio(this);
 		}
 	}
