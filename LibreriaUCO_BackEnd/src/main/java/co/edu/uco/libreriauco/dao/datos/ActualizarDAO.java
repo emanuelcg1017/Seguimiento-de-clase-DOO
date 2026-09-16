@@ -1,5 +1,6 @@
 package co.edu.uco.libreriauco.dao.datos;
 
-public interface ActualizarDAO {
+public interface ActualizarDAO<E, ID> {
 
+	void actualizar(ID id, E e);
 }

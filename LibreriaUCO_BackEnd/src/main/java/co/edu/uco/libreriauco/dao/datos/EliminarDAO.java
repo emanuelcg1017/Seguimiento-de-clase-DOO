@@ -1,5 +1,6 @@
 package co.edu.uco.libreriauco.dao.datos;
 
-public interface EliminarDAO {
-
+public interface EliminarDAO<ID> {
+	
+	void eliminar(ID id);
 }

@@ -34,12 +34,12 @@ public class PaisDominio {
 		}
 
 		public Builder id(UUID id) {
-			id = UtilUUID.obtenerValorDefecto(id);
+			this.id = UtilUUID.obtenerValorDefecto(id);
 			return this;
 		}
 
 		public Builder nombre(String nombre) {
-			nombre = UtilTexto.getUtilTexto().quitarEspacionEnBlanco(nombre);
+			this.nombre = UtilTexto.getUtilTexto().quitarEspacionEnBlanco(nombre);
 			return this;
 		}
 		

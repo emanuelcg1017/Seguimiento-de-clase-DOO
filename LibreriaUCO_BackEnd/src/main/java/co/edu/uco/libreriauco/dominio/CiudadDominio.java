@@ -1,8 +1,6 @@
 package co.edu.uco.libreriauco.dominio;
 
 import java.util.UUID;
-
-import co.edu.uco.libreriauco.dominio.DepartamentoDominio.Builder;
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilObjeto;
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilTexto;
 import co.edu.uco.libreriauco.transversal.utilitarios.UtilUUID;
