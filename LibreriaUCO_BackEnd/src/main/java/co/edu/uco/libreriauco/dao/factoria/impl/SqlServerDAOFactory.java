@@ -24,12 +24,12 @@ public class SqlServerDAOFactory extends DAOFactory {
 
 	@Override
 	public PaisDAO obtenerPaisDAO() {
-		return new PaisSqlServerDAO();
+		return new PaisSqlServerDAO(getConexion());
 	}
 
 	@Override
 	public DepartamentoDAO obtenerDepartamentoDAO() {
-		return new DepartamentoSqlServerDAO();
+		return new DepartamentoSqlServerDAO(getConexion());
 	}
 
 }

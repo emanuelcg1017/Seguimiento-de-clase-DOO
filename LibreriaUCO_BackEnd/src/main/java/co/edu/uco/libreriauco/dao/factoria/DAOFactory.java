@@ -1,9 +1,10 @@
 package co.edu.uco.libreriauco.dao.factoria;
 
 import java.sql.Connection;
-
 import co.edu.uco.libreriauco.dao.datos.entidad.DepartamentoDAO;
 import co.edu.uco.libreriauco.dao.datos.entidad.PaisDAO;
+import co.edu.uco.libreriauco.transversal.catalogo.CatalogoMensajes.UtilSQL;
+
 
 public abstract class DAOFactory {
 
@@ -26,11 +27,11 @@ public abstract class DAOFactory {
 
 
 	public void cerrarConexion() {
-		// tarea: como se cierra la conexion de manera segura?
+		co.edu.uco.libreriauco.transversal.utilitarios.UtilSQL.cerrarConexion(conexion);
 	}
 
 	public void iniciarTransaccion() {
-		// tarea: como se inicia una transaccion de forma segura?
+		
 	}
 
 	public void confirmarTransacion() {

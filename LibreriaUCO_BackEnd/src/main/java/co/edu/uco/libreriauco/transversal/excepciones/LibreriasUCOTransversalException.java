@@ -11,4 +11,15 @@ public class LibreriasUCOTransversalException extends LibreriaUCOExcepcion {
 		super(Capa.TRANSVERSAL, mensajeUsuario, mensajeTecnico, excepcionRaiz);
 	}
 
+	public static LibreriaUCOExcepcion crear(String mensajeUsuario) {
+		return new LibreriasUCOTransversalException(mensajeUsuario, mensajeUsuario, new Exception(mensajeUsuario));
+	}
+	
+	public static LibreriaUCOExcepcion crear(String mensajeUsuario, String mensajeTecnico) {
+		return new LibreriasUCOTransversalException(mensajeUsuario, mensajeUsuario, new Exception(mensajeTecnico));
+	}
+	
+	public static LibreriaUCOExcepcion crear(String mensajeUsuario, String mensajeTecnico, Exception excepcionRaiz) {
+		return new LibreriasUCOTransversalException(mensajeUsuario, mensajeUsuario, excepcionRaiz);
+	}
 }
