@@ -11,4 +11,32 @@ public class LibreriaUCODatosException extends LibreriaUCOExcepcion{
 		
 	}
 
+	public static LibreriaUCOExcepcion crear(String mensajeUsuario) {
+
+		return new LibreriaUCODatosException(
+				mensajeUsuario,
+				mensajeUsuario,
+				new Exception(mensajeUsuario));
+	}
+
+	public static LibreriaUCOExcepcion crear(
+			String mensajeUsuario,
+			String mensajeTecnico) {
+
+		return new LibreriaUCODatosException(
+				mensajeUsuario,
+				mensajeTecnico,
+				new Exception(mensajeTecnico));
+	}
+
+	public static LibreriaUCOExcepcion crear(
+			String mensajeUsuario,
+			String mensajeTecnico,
+			Exception excepcionRaiz) {
+
+		return new LibreriaUCODatosException(
+				mensajeUsuario,
+				mensajeTecnico,
+				excepcionRaiz);
+	}
 }

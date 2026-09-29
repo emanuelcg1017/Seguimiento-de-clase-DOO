@@ -41,7 +41,7 @@ public class LibreriaUCOExcepcion extends RuntimeException {
 	}
 
 	private void setCapa(Capa capa) {
-		this.capa = UtilObjeto.obtenerValorDefectoSiNulo(capa, capa.GENERAL);
+		this.capa = UtilObjeto.obtenerValorDefectoSiNulo(capa, Capa.GENERAL);
 	}
 
 	private void setMensajeUsuario(String mensajeUsuario) {
