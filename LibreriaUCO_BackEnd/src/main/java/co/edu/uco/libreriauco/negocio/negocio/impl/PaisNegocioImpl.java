@@ -5,26 +5,26 @@ import java.util.UUID;
 
 import co.edu.uco.libreriauco.dao.factoria.DAOFactory;
 import co.edu.uco.libreriauco.dominio.PaisDominio;
-import co.edu.uco.libreriauco.entidad.PaisEntidad;
 import co.edu.uco.libreriauco.negocio.negocio.PaisNegocio;
 import co.edu.uco.libreriauco.negocio.negocio.assembler.impl.PaisEntidadAssembler;
-import co.edu.uco.libreriauco.transversal.catalogo.CatalogoMensajes;
-import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCONegocioException;
+import co.edu.uco.libreriauco.negocio.negocio.reglas.impl.pais.AsegurarNombreNuevoPaisNoExistaRule;
+import co.edu.uco.libreriauco.negocio.negocio.reglas.impl.pais.ValidarDatosRegistrarInformacionNuevoPaisRule;
 
 public class PaisNegocioImpl  implements PaisNegocio{
 	
 	private DAOFactory daoFactory;
 	
 	
-	protected PaisNegocioImpl(DAOFactory daoFactory) {
+	public PaisNegocioImpl(DAOFactory daoFactory) {
 		this.daoFactory = daoFactory;
 	}
 
 	@Override
 	public void registrarInformacionNuevoPais(PaisDominio datos) {
 
-		asegurarDatosRegistroNuevoPaisValidos(datos);
-		asegurarNombreNuevoPaisNoExista(datos.getNombre());
+		ValidarDatosRegistrarInformacionNuevoPaisRule.obtenerInstancia().ejecutar(datos);
+		
+		AsegurarNombreNuevoPaisNoExistaRule.obtenerInstancia().ejecutar(datos.getNombre(), daoFactory);
 		
 		var paisEntidad = PaisEntidadAssembler.getInstance().convertirAEntidad(datos);
 		paisEntidad.setId(generarIdPaisUnico());
@@ -32,24 +32,6 @@ public class PaisNegocioImpl  implements PaisNegocio{
 		daoFactory.obtenerPaisDAO().crear(paisEntidad);
 	}
 	
-	private void asegurarDatosRegistroNuevoPaisValidos(PaisDominio datos) {
-
-		
-	}
-	
-	private void asegurarNombreNuevoPaisNoExista(String nombrePais) {
-		
-		var entidadFiltro = new PaisEntidad();
-		entidadFiltro.setNombre(nombrePais);
-		
-		var resultados = daoFactory.obtenerPaisDAO().consultarPorFiltro(entidadFiltro);
-		
-		
-		if(!resultados.isEmpty()) {
-			var mensajeUsuario = CatalogoMensajes.PaisNegocioImpl.Pais_Ya_Existe_Con_El_Mismo_Nombre_Pais_A_Crear;
-			throw LibreriaUCONegocioException.crear(mensajeUsuario);
-		}
-	}
 	
 	private UUID generarIdPaisUnico() {
 		return UUID.randomUUID();

@@ -11,15 +11,20 @@ public class PaisDTO {
 	private String nombre;
 
 	public PaisDTO() {
-		setId(id);
-		setNombre(UtilTexto.VACIO);
+		this(new Builder());
+	}
+
+	private PaisDTO(final Builder builder) {
+
+		setId(builder.id);
+		setNombre(builder.nombre);
 	}
 
 	public UUID getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(final UUID id) {
 		this.id = UtilUUID.obtenerValorDefecto(id);
 	}
 
@@ -27,9 +32,33 @@ public class PaisDTO {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
+	public void setNombre(final String nombre) {
 		this.nombre = UtilTexto.getUtilTexto().quitarEspacionEnBlanco(nombre);
 	}
 
-	
+	public static class Builder {
+
+		private UUID id;
+		private String nombre;
+
+		public Builder() {
+
+			id = UtilUUID.obtenerValorDefecto(id);
+			nombre = UtilTexto.VACIO;
+		}
+
+		public Builder id(final UUID id) {
+			this.id = id;
+			return this;
+		}
+
+		public Builder nombre(final String nombre) {
+			this.nombre = nombre;
+			return this;
+		}
+
+		public PaisDTO build() {
+			return new PaisDTO(this);
+		}
+	}
 }

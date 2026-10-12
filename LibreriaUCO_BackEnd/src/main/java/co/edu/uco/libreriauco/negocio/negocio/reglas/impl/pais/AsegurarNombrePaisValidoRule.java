@@ -1,10 +1,9 @@
 package co.edu.uco.libreriauco.negocio.negocio.reglas.impl.pais;
 
-import com.ketra.transversal.catalogo.CatalogoMensajes;
-import com.ketra.transversal.utilitarios.UtilTexto;
-
 import co.edu.uco.libreriauco.negocio.negocio.reglas.Rule;
+import co.edu.uco.libreriauco.transversal.catalogo.CatalogoMensajes;
 import co.edu.uco.libreriauco.transversal.excepciones.LibreriaUCONegocioException;
+import co.edu.uco.libreriauco.transversal.utilitarios.UtilTexto;
 
 public class AsegurarNombrePaisValidoRule implements Rule<String>{
 

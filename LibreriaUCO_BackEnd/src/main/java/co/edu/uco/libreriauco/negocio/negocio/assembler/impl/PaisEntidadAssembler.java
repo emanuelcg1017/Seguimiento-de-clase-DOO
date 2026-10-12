@@ -30,7 +30,7 @@ public class PaisEntidadAssembler implements EntidadAssembler<PaisDominio, PaisE
 		var entidadTmp = UtilObjeto.obtenerValorDefectoSiNulo(entidad, new PaisEntidad());
 		
 		return new PaisDominio.Builder()
-				.id(entidadTmp.getId())()
+				.id(entidadTmp.getId())
 				.nombre(entidadTmp.getNombre())
 				.build();
 	}

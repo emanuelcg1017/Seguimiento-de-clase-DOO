@@ -1,7 +1,6 @@
 package co.edu.uco.libreriauco.negocio.negocio.reglas.impl.pais;
 
-import com.ketra.dao.factoria.DAOFactory;
-
+import co.edu.uco.libreriauco.dao.factoria.DAOFactory;
 import co.edu.uco.libreriauco.entidad.PaisEntidad;
 import co.edu.uco.libreriauco.negocio.negocio.reglas.Rule;
 import co.edu.uco.libreriauco.transversal.catalogo.CatalogoMensajes;

@@ -15,7 +15,7 @@ import co.edu.uco.libreriauco.transversal.utilitarios.UtilSQL;
 
 public class SqlServerDAOFactory extends DAOFactory {
 
-	protected SqlServerDAOFactory() {
+	public SqlServerDAOFactory() {
 		super();
 	}
 

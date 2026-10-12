@@ -1,8 +1,10 @@
 package co.edu.uco.libreriauco.transversal.utilitarios;
 
 public class UtilTexto {
+	
 	private static UtilTexto INSTANCIA;
-	public static String VACIO;
+	public static final String SOLO_LETRAS_ESPACIOS = "^[a-zA-Z ñÑáÁéÉíÍóÓúÚ]*$";
+	public static final String VACIO = "";
 	
 	private UtilTexto() {
 		
@@ -48,5 +50,10 @@ public class UtilTexto {
 		var valorSanitizado = quitarEspaciosBlanco ? quitarEspacionEnBlanco(cadena) : cadena;
 		
 		return obtenerLongitudCadena(valorSanitizado) >= longitudInicial && obtenerLongitudCadena(cadena) <= longitudFinal;
+	}
+	
+	public boolean formatoEsValido(String valor, String patron) {
+		
+		return (obtenerValorDefecto(valor)).matches(obtenerValorDefecto(patron));
 	}
 	}

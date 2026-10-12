@@ -2,6 +2,8 @@ package co.edu.uco.libreriauco.transversal.catalogo;
 
 public class CatalogoMensajes {
 
+
+
 	private CatalogoMensajes() {
 
 	}
@@ -49,4 +51,19 @@ public class CatalogoMensajes {
 
 		public static final String TECNICO_ERROR_CONEXION_SQL_SERVER ="Se presentó un error tratando de establecer la conexión con SQL Server. Detalle técnico: ";
 	}
+	
+	public static final class PaisNegocioImpl {
+		
+		private PaisNegocioImpl() {
+		}
+
+
+		public static  final String NOMBRE_PAIS_OBLIGATORIO  = "El nombre del pais es obligatorio para llevar a cabo la operacion deseada";
+		
+		public static final String LONGITUD_NOMBRE_PAIS_NO_VALIDA = "La longitud del pais no es válida. Asegurese que esté entre 1 y 50";
+
+		public static final String FORMATO_PAIS_NO_VALIDO = "El formato del pais no es valido";
+
+		public static final String Pais_Ya_Existe_Con_El_Mismo_Nombre_Pais_A_Crear = "ya existe un pais con ese nombre";
+	}	
 }
