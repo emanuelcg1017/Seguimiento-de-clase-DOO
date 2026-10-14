@@ -1,5 +1,6 @@
 package co.edu.uco.libreriauco.transversal.utilitarios;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class UtilFecha {
 	
@@ -18,6 +19,10 @@ public class UtilFecha {
 	
 	public static LocalDate obtenerFechaActual() {
 		return LocalDate.now();
+	}
+	
+	public static LocalDateTime obtenerFechaHoraActual() {
+		return LocalDateTime.now();
 	}
 	
 	public static boolean esIgualA(LocalDate fechaUno ,LocalDate fechaDos) {

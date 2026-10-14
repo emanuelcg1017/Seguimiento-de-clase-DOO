@@ -4,6 +4,9 @@ import java.util.UUID;
 
 public class UtilUUID {
 	
+	
+	//ofEpochMillis(instant.now().toEpochMilli())
+	
 	public static UUID UUID_DEFECTO = new UUID(0L, 0L);
 	
 	private UtilUUID() {
@@ -12,6 +15,10 @@ public class UtilUUID {
 	public static UUID generar() {
 		return UUID.randomUUID();
 	}
+	
+	public static String generarComoTexto() {
+        return UUID.randomUUID().toString();
+    }
 	
 	public static UUID obtenerValorDefecto(UUID id, UUID idDefecto){
 		return UtilObjeto.obtenerValorDefectoSiNulo(id, idDefecto);
